@@ -7,6 +7,8 @@ Why can't you just `import "gist.github.com/UserName/112358"`? Because Gists don
 
 Which is why I made this silly hack. Instead of `import "gist.github.com/..."`, `import "go-gist.appspot.com/..."`, and this site will tell the Go tool to go fetch the contents of the Gist instead.
 
-It's all described in the docs. Those guys thought of everything.
+It's all described [in the docs][0]. Those guys thought of everything.
 
 By the way, this would be totally unnecessary if the Gist HTML page was served with the necessary `<meta>` tag. If you work at GitHub or know someone who does, bug them to add a tag to their Gist HTML so I can turn this site off.
+
+[0]: http://golang.org/cmd/go/#hdr-Remote_import_paths
