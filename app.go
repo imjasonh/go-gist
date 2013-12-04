@@ -23,5 +23,6 @@ func init() {
 		w.Header().Set("Content-Type", "text/html")
 		w.Write([]byte(fmt.Sprintf(t, r.URL.Host+r.URL.Path, v["username"], v["gistID"])))
 	}).Methods("GET")
+	r.Handle("/", http.RedirectHandler("https://github.com/ImJasonH/go-gist", http.StatusSeeOther))
 	http.Handle("/", r)
 }
