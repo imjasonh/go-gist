@@ -18,10 +18,12 @@ const t = `
 
 func init() {
 	r := mux.NewRouter()
-	r.HandleFunc("/{username}/{gistID:[0-9]+}", func(w http.ResponseWriter, r *http.Request) {
+	h := func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/html")
 		w.Write([]byte(fmt.Sprintf(t, r.URL.Host+r.URL.Path, mux.Vars(r)["gistID"])))
-	}).Methods("GET")
+	}
+	r.HandleFunc("/{username}/{gistID:[0-9]+}", h).Methods("GET")
+	r.HandleFunc("/{gistID:[0-9]+}", h).Methods("GET")
 	r.Handle("/", http.RedirectHandler("https://github.com/ImJasonH/go-gist", http.StatusSeeOther))
 	http.Handle("/", r)
 }
