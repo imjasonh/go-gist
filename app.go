@@ -23,7 +23,9 @@ func init() {
 		w.Write([]byte(fmt.Sprintf(t, r.URL.Host+r.URL.Path, mux.Vars(r)["gistID"])))
 	}
 	r.HandleFunc("/{username}/{gistID:[0-9]+}", h).Methods("GET")
+	r.HandleFunc("/{username}/{gistID:[0-9]+}/{package:[a-zA-Z0-9]+}", h).Methods("GET")
 	r.HandleFunc("/{gistID:[0-9]+}", h).Methods("GET")
+	r.HandleFunc("/{gistID:[0-9]+}/{package:[a-zA-Z0-9]+}", h).Methods("GET")
 	r.Handle("/", http.RedirectHandler("https://github.com/ImJasonH/go-gist", http.StatusSeeOther))
 	http.Handle("/", r)
 }
