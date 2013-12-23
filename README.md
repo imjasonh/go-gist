@@ -13,6 +13,27 @@ Try it out:
 ```
 go get go-gist.appspot.com/ImJasonH/7791518
 ```
+or
+```
+go get go-gist.appspot.com/ImJasonH/7791518/readyset
+```
+
+Then:
+
+```
+import (
+	//...
+	readyset "go-gist.appspot.com/ImJasonH/7791518"
+)
+```
+or
+
+```
+import (
+	//...
+	"go-gist.appspot.com/ImJasonH/7791518/readyset"
+)
+```
 
 By the way, this would be totally unnecessary if the Gist HTML page was served with the necessary `<meta>` tag. If you work at GitHub or know someone who does, bug them to add a tag to their Gist HTML so I can turn this site off.
 
