@@ -1,7 +1,7 @@
 go-gist
 =======
 
-Ever see some tasty Go code in a [GitHub Gist][1] and want to try it out? What are you supposed to do, clone it into your own GitHub repo and `go get` it from there? Copy it locally? What are you a farmer?
+Ever see some tasty Go code in a [GitHub Gist][1] and want to try it out? What are you supposed to do, clone it into your own GitHub repo and `go get` it from there? Copy it locally? What are you? A farmer?
 
 What you really want is to `import "gist.github.com/UserName/11235813"`, but Gists don't support that. :cry:
 
